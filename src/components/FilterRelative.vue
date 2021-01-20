@@ -36,26 +36,26 @@
 <template>
   <div>
     <div class="grid grid-cols-2 gap-1">
-      <label class="font-semibold text-sm text-gray-600 pb-1 block"
+      <label class="input-label"
         >Outcome</label
       >
       <select
         v-model="outcome"
         @change="updateFilter"
-        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm"
+        class="input"
       >
         <option v-bind:key="outcome" v-for="outcome of outcomes">{{ outcome }}</option>
       </select>
     </div>
     <div class="grid grid-cols-2 gap-1">
-      <label class="font-semibold text-sm text-gray-600 pb-1 block"
+      <label class="input-label"
         >Count</label
       >
       <input
         @change="updateFilter"
         v-model.number="count"
         type="number"
-        class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm"
+        class="input"
       />
     </div>
   </div>

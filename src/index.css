@@ -3,5 +3,21 @@
 @tailwind utilities;
 
 .base {
-    @apply min-h-screen bg-gray-100 flex flex-col min-h-screen;
+    @apply min-h-screen dark:bg-gray-800 bg-gray-100 flex flex-col min-h-screen dark:text-gray-300;
+}
+
+.section-label {
+  @apply font-semibold text-gray-600 pb-5 block text-center text-lg dark:text-gray-200;
+}
+
+.button {
+  @apply transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block;
+}
+
+.input-label {
+  @apply font-semibold text-sm text-gray-600 pb-1 block dark:text-gray-300;
+}
+
+.input {
+  @apply border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full dark:text-black;
 }

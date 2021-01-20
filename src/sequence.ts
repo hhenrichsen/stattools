@@ -1,4 +1,7 @@
 // @ts-nocheck
+import { range } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 const filterOptions = {
     countgt: function(options) {
         const { outcome, number } = options;
@@ -61,6 +64,37 @@ export function generate(customOptions) {
         sequences.push(sequence);
     }
     return sequences;
+}
+
+function generateOne(outcomes, outcomeCount, length, i) {
+    let sequence = [];
+    const indices = getIndices(outcomeCount, length, i);
+    for (const index of indices) {
+        sequence.push(outcomes[index]);
+    }
+    return sequence;
+}
+
+export async function generateAsync(customOptions, cb, chunkCb) : Promise<Array<Array<string>>> {
+    const options = Object.assign({ outcomeCount: customOptions.outcomes.length }, customOptions);
+    const { length, outcomeCount, outcomes, filters } = options;
+    const bound = Math.pow(outcomeCount, length);
+    let sequences = [];
+    function help(i, helpCb) {
+        let seq = generateOne(outcomes, outcomeCount, length, i);
+        if (filters.every(it => it(seq))) {
+            sequences.push(seq);
+            chunkCb(sequences.length)
+        }
+        if (i == bound - 1) {
+            helpCb(sequences);
+            return;
+        }
+
+        setTimeout(help.bind(null, i+1, helpCb), 0);
+    }
+
+    help(0, cb);
 }
 
 export function parseFilters(filters) {

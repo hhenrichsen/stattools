@@ -1,16 +1,16 @@
 <template>
   <div>
-    <h3 class="font-semibold text-sm text-gray-600 pb-3 pt-3 block text-center">
+    <h3 class="filter-label">
       {{ filter.name }}
     </h3>
     <form @change="setDirty">
       <div class="grid grid-cols-2 gap-1">
-        <label class="font-semibold text-sm text-gray-600 pb-1 block"
+        <label class="input-label"
           >Type</label
         >
         <select
           v-model="type"
-          class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm"
+          class="input"
           @change="changeType"
         >
           <option value="empty">Empty</option>
@@ -122,3 +122,9 @@
         }
     })
 </script>
+
+<style>
+.filter-label {
+  @apply font-semibold text-sm text-gray-600 pb-3 pt-3 block text-center dark:text-gray-300;
+}
+</style>

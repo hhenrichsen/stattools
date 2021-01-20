@@ -4,6 +4,11 @@ import { getBabelOutputPlugin } from '@rollup/plugin-babel'
 
 export default defineConfig({
   plugins: [vue()],
+  optimizeDeps: {
+    include: [
+      'rxjs/operators',
+    ]
+  },
   build: {
     rollupOptions: {
       output: [

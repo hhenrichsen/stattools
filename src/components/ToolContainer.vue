@@ -37,14 +37,14 @@
 
 <style scoped>
 .tool-subtitle {
-  @apply font-semibold text-center text-lg mb-5 text-gray-600;
+  @apply font-semibold text-center text-lg mb-5 text-gray-600 dark:text-gray-300;
 }
 
 .tool-title {
-  @apply font-bold text-center text-2xl mb-2;
+  @apply font-bold text-center text-2xl mb-2 text-gray-900 dark:text-gray-100;
 }
 
 .tool-container {
-  @apply p-10 bg-white shadow w-full rounded-lg divide-y divide-gray-200;
+  @apply p-10 bg-white shadow w-full rounded-lg divide-y divide-gray-200 dark:divide-gray-900 dark:bg-gray-700;
 }
 </style>

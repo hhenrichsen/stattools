@@ -9,8 +9,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "rxjs": "^6.6.3",
     "uuid": "^8.3.2",
-    "vue": "^3.0.5"
+    "vue": "^3.0.5",
+    "vue-rx": "^6.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
