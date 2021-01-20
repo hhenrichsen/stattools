@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-10 md:mt-0 md:w-96">
     <h1 class="tool-title">{{ name }}</h1>
     <h2 class="tool-subtitle" v-if="subtitle !== ''">{{ subtitle }}</h2>
     <div class="tool-container">
@@ -11,10 +11,12 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
     import Permutation from './Permutation.vue'
+    import Random from './Random.vue'
 
     export default defineComponent({
         components: {
             Permutation,
+            Random,
         },
         name: 'ToolContainer',
         props: {
@@ -45,6 +47,6 @@
 }
 
 .tool-container {
-  @apply p-10 bg-white shadow w-full rounded-lg divide-y divide-gray-200 dark:divide-gray-900 dark:bg-gray-700;
+  @apply p-10 bg-white shadow w-full rounded-lg divide-y divide-gray-200 dark:divide-blue-100 dark:bg-gray-700;
 }
 </style>
